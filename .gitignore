@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/
+.vscode/
+.idea/
+*.log
+
+# Source files (Illustrator) - keep out of repo by default
+*.ai

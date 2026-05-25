@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>¿Qué Suzuki eres?</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/logo-suzuki.png" />
+  <meta name="theme-color" content="#1B2D69" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- ===== SCREEN: WELCOME ===== -->
+    <section class="screen screen--welcome is-active" data-screen="welcome">
+      <div class="welcome-bg"></div>
+      <div class="welcome-content">
+        <div class="logo-wrap">
+          <img src="assets/logo-suzuki.png" alt="Suzuki by Your Side" class="logo" />
+        </div>
+        <h1 class="welcome-title">
+          <span class="welcome-title__line1">¿Qué</span>
+          <span class="welcome-title__line2">Suzuki</span>
+          <span class="welcome-title__line3">eres?</span>
+        </h1>
+        <p class="welcome-sub">Descubre cuál modelo conecta con tu personalidad en 4 preguntas.</p>
+        <button class="btn btn--primary btn--xl" data-action="start">Empezar</button>
+      </div>
+    </section>
+
+    <!-- ===== SCREEN: REGISTER ===== -->
+    <section class="screen screen--register" data-screen="register">
+      <div class="container">
+        <div class="header">
+          <img src="assets/logo-suzuki.png" alt="Suzuki" class="header-logo" />
+        </div>
+        <div class="card">
+          <h2 class="step-title">Antes de empezar</h2>
+          <p class="step-sub">Cuéntanos quién eres</p>
+          <form id="register-form" class="form" novalidate>
+            <div class="field">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" name="name" autocomplete="off" autocapitalize="words" required placeholder="Tu nombre completo" />
+            </div>
+            <div class="field">
+              <label for="email">Correo</label>
+              <input type="email" id="email" name="email" autocomplete="off" autocapitalize="off" required placeholder="tu@correo.com" />
+            </div>
+            <div class="form-error" id="form-error"></div>
+            <button type="submit" class="btn btn--primary btn--xl btn--block">Continuar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCREEN: QUIZ ===== -->
+    <section class="screen screen--quiz" data-screen="quiz">
+      <div class="container">
+        <div class="header">
+          <img src="assets/logo-suzuki.png" alt="Suzuki" class="header-logo" />
+          <div class="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+          </div>
+          <div class="progress-label" id="progress-label">1 / 4</div>
+        </div>
+
+        <div class="card card--quiz">
+          <h2 class="question-title" id="question-title"></h2>
+          <div class="options" id="options"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SCREEN: LOADING ===== -->
+    <section class="screen screen--loading" data-screen="loading">
+      <div class="loader-wrap">
+        <div class="loader"></div>
+        <p class="loader-text">Calculando tu Suzuki…</p>
+      </div>
+    </section>
+
+    <!-- ===== SCREEN: RESULT ===== -->
+    <section class="screen screen--result" data-screen="result">
+      <div class="container container--wide">
+        <div class="header">
+          <img src="assets/logo-suzuki.png" alt="Suzuki" class="header-logo" />
+        </div>
+        <div class="result">
+          <p class="result-eyebrow">Tu Suzuki es…</p>
+          <h2 class="result-name" id="result-name"></h2>
+          <div class="result-car">
+            <img id="result-image" src="" alt="" />
+          </div>
+          <p class="result-desc" id="result-desc"></p>
+          <div class="result-traits" id="result-traits"></div>
+          <button class="btn btn--primary btn--xl" data-action="restart">Empezar de nuevo</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="js/quiz-data.js"></script>
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+    }
+  </script>
+</body>
+</html>

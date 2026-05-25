@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin · ¿Qué Suzuki eres?</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="assets/logo-suzuki.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <img src="assets/logo-suzuki.png" alt="Suzuki" class="header-logo" />
+      <div class="admin-header__titles">
+        <h1 class="admin-title">¿Qué Suzuki eres? · Panel</h1>
+        <span id="source-badge" class="source-badge is-local">Modo local</span>
+      </div>
+      <button id="refresh" class="btn btn--primary">Actualizar</button>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="stats" id="stats"></section>
+
+    <section class="filters">
+      <input type="search" id="search" placeholder="Buscar por nombre o correo…" />
+      <select id="filter-result">
+        <option value="">Todos los resultados</option>
+        <option value="swift">Swift</option>
+        <option value="dzire">Dzire</option>
+        <option value="jimny">Jimny</option>
+      </select>
+      <button id="export-csv"  class="btn btn--ghost">Exportar CSV</button>
+      <button id="export-json" class="btn btn--ghost">Exportar JSON</button>
+      <button id="sync-now"    class="btn btn--ghost">Sincronizar</button>
+      <button id="clear-all"   class="btn btn--danger">Borrar todo</button>
+    </section>
+
+    <section class="table-wrap">
+      <table class="table" id="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Resultado</th>
+            <th>Respuestas</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <tr><td colspan="6" class="empty">Cargando…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <p class="admin-foot">
+      Los registros se guardan en el almacenamiento local de este iPad/navegador.
+      Exporta el CSV al final del evento. <strong>No borres los datos del sitio
+      en Ajustes &gt; Safari</strong>, eso elimina los registros.
+    </p>
+  </main>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('service-worker.js'));
+    }
+  </script>
+</body>
+</html>
