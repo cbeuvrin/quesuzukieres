@@ -5,12 +5,13 @@
    - Cambia CACHE_VERSION cuando actualices algo para forzar refresh
    ========================================================== */
 
-const CACHE_VERSION = 'suzuki-quiz-v1';
+const CACHE_VERSION = 'suzuki-quiz-v2';
 const CORE_ASSETS = [
   './',
   './index.html',
   './admin.html',
   './manifest.json',
+  './admin-manifest.json',
   './css/styles.css',
   './css/admin.css',
   './js/app.js',
