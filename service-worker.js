@@ -5,7 +5,7 @@
    - Cambia CACHE_VERSION cuando actualices algo para forzar refresh
    ========================================================== */
 
-const CACHE_VERSION = 'suzuki-quiz-v2';
+const CACHE_VERSION = 'suzuki-quiz-v3';
 const CORE_ASSETS = [
   './',
   './index.html',
