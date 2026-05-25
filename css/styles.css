@@ -3,6 +3,34 @@
    Estilos para el quiz interactivo (iPad first)
    =========================================== */
 
+/* ===========================================
+   FUENTE OFICIAL SUZUKI
+   - Regular (400)  → cuerpo
+   - Bold (700)     → énfasis
+   - Headline (900) → títulos grandes
+   =========================================== */
+@font-face {
+  font-family: 'Suzuki';
+  src: url('../assets/fonts/SuzukiPRORegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suzuki';
+  src: url('../assets/fonts/SuzukiPROBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Suzuki';
+  src: url('../assets/fonts/SuzukiPROHeadline.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Paleta oficial del logo: rojo Suzuki + azul navy del wordmark */
   --suzuki-red: #E60012;
@@ -35,7 +63,7 @@ html, body {
   overflow: hidden;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Suzuki', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
@@ -124,7 +152,7 @@ input, textarea {
 }
 
 .progress-label {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 14px;
   color: var(--muted);
@@ -190,7 +218,7 @@ input, textarea {
 }
 
 .welcome-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 900;
   font-size: clamp(56px, 9vw, 100px);
   line-height: 0.95;
@@ -233,7 +261,7 @@ input, textarea {
   position: absolute;
   bottom: 20px;
   right: 20px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -261,7 +289,7 @@ input, textarea {
    STEP TITLES
    =========================================== */
 .step-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   font-size: 32px;
   line-height: 1.15;
@@ -277,7 +305,7 @@ input, textarea {
 }
 
 .question-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   font-size: 30px;
   line-height: 1.2;
@@ -303,7 +331,7 @@ input, textarea {
 }
 
 .field label {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.08em;
@@ -393,7 +421,7 @@ input, textarea {
   min-width: 44px;
   border-radius: 12px;
   background: var(--bg);
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   font-size: 20px;
   color: var(--ink-soft);
@@ -415,7 +443,7 @@ input, textarea {
    BUTTONS
    =========================================== */
 .btn {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   letter-spacing: 0.02em;
   font-size: 18px;
@@ -485,7 +513,7 @@ input, textarea {
 }
 
 .loader-text {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 18px;
   color: var(--ink-soft);
@@ -508,7 +536,7 @@ input, textarea {
 }
 
 .result-eyebrow {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 16px;
   letter-spacing: 0.16em;
@@ -518,7 +546,7 @@ input, textarea {
 }
 
 .result-name {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 900;
   font-size: clamp(44px, 7vw, 72px);
   line-height: 1;
@@ -571,7 +599,7 @@ input, textarea {
   border: 1.5px solid var(--line);
   border-radius: 999px;
   padding: 8px 18px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 600;
   font-size: 14px;
   color: var(--ink-soft);

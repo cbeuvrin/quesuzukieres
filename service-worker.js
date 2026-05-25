@@ -5,7 +5,7 @@
    - Cambia CACHE_VERSION cuando actualices algo para forzar refresh
    ========================================================== */
 
-const CACHE_VERSION = 'suzuki-quiz-v4';
+const CACHE_VERSION = 'suzuki-quiz-v5';
 const CORE_ASSETS = [
   './',
   './index.html',
@@ -21,7 +21,10 @@ const CORE_ASSETS = [
   './assets/logo-suzuki.png',
   './assets/swift-booster-green-amarillo-ocaso.png',
   './assets/DZIRE-BOOSTERGREEN-2026.png',
-  './assets/JIMNY-5-DOOR-2026.png'
+  './assets/JIMNY-5-DOOR-2026.png',
+  './assets/fonts/SuzukiPRORegular.otf',
+  './assets/fonts/SuzukiPROBold.otf',
+  './assets/fonts/SuzukiPROHeadline.otf'
 ];
 
 // Install: pre-cachea todo lo del core

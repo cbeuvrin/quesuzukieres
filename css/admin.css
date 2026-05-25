@@ -43,7 +43,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
 }
 
 .admin-title {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   font-size: 22px;
   margin: 0;
@@ -54,7 +54,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
 .source-badge {
   display: inline-block;
   align-self: flex-start;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.08em;
@@ -97,7 +97,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
 .stat--jimny { border-top-color: var(--suzuki-red); }
 
 .stat__label {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.12em;
@@ -107,7 +107,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
 }
 
 .stat__value {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 900;
   font-size: 40px;
   line-height: 1;
@@ -224,7 +224,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
 .table th {
   text-align: left;
   padding: 14px 18px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -247,7 +247,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
   display: inline-block;
   padding: 4px 12px;
   border-radius: 999px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.06em;
@@ -268,7 +268,7 @@ html, body { overflow: auto !important; height: auto !important; user-select: au
   width: 24px;
   height: 24px;
   border-radius: 6px;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Suzuki', sans-serif;
   font-weight: 800;
   font-size: 11px;
   color: var(--white);

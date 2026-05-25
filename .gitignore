@@ -6,3 +6,7 @@ node_modules/
 
 # Source files (Illustrator) - keep out of repo by default
 *.ai
+
+# Source folders (no necesarios en el repo)
+Fuente SUZUKI/
+Fuente SUZUKI.zip
