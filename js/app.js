@@ -12,6 +12,7 @@
   const state = {
     name: '',
     email: '',
+    phone: '',
     currentQuestion: 0,
     answers: [],          // ej: ['swift', 'dzire', 'jimny', 'swift']
     result: null,         // 'swift' | 'dzire' | 'jimny'
@@ -57,6 +58,7 @@
     e.preventDefault();
     const name  = $('#name').value.trim();
     const email = $('#email').value.trim();
+    const phone = $('#phone').value.trim();
     const err   = $('#form-error');
 
     err.textContent = '';
@@ -69,9 +71,16 @@
       err.textContent = 'Escribe un correo válido.';
       return;
     }
+    // teléfono: mínimo 7 dígitos (ignorando espacios, guiones, +, paréntesis)
+    const phoneDigits = phone.replace(/[^\d]/g, '');
+    if (phoneDigits.length < 7) {
+      err.textContent = 'Escribe un teléfono válido.';
+      return;
+    }
 
     state.name = name;
     state.email = email;
+    state.phone = phone;
     state.currentQuestion = 0;
     state.answers = [];
 
@@ -136,6 +145,7 @@
     const save = Storage.save({
       name:        state.name,
       email:       state.email,
+      phone:       state.phone,
       result:      state.result,
       result_name: QUIZ_RESULTS[state.result].name,
       answers:     state.answers,
@@ -176,6 +186,7 @@
   function resetState() {
     state.name = '';
     state.email = '';
+    state.phone = '';
     state.currentQuestion = 0;
     state.answers = [];
     state.result = null;

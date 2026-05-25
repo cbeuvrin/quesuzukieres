@@ -46,6 +46,7 @@ const Storage = (() => {
       id:          uid(),
       name:        record.name,
       email:       record.email,
+      phone:       record.phone || '',
       result:      record.result,
       result_name: record.result_name,
       answers:     record.answers,
@@ -72,6 +73,7 @@ const Storage = (() => {
     const payload = {
       name:        row.name,
       email:       row.email,
+      phone:       row.phone || '',
       result:      row.result,
       result_name: row.result_name,
       answers:     row.answers,

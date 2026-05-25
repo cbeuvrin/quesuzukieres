@@ -37,7 +37,7 @@
     const rows = allRows.filter(r => {
       if (filter && r.result !== filter) return false;
       if (search) {
-        const hay = `${r.name || ''} ${r.email || ''}`.toLowerCase();
+        const hay = `${r.name || ''} ${r.email || ''} ${r.phone || ''}`.toLowerCase();
         if (!hay.includes(search)) return false;
       }
       return true;
@@ -80,7 +80,7 @@
 
   function renderRows(rows) {
     if (rows.length === 0) {
-      $('#rows').innerHTML = '<tr><td colspan="6" class="empty">Sin registros todavía</td></tr>';
+      $('#rows').innerHTML = '<tr><td colspan="7" class="empty">Sin registros todavía</td></tr>';
       return;
     }
 
@@ -96,6 +96,7 @@
           <td>${i + 1}</td>
           <td>${escapeHtml(r.name || '—')}</td>
           <td>${escapeHtml(r.email || '—')}</td>
+          <td>${escapeHtml(r.phone || '—')}</td>
           <td>${syncDot}<span class="badge badge--${r.result}">${r.result_name || r.result || '—'}</span></td>
           <td><div class="answers-mini">${mini}</div></td>
           <td>${date}</td>
@@ -113,13 +114,14 @@
   // ---------- Export ----------
   function exportCSV() {
     if (!allRows.length) { alert('No hay registros para exportar.'); return; }
-    const headers = ['Nombre', 'Correo', 'Resultado', 'Respuestas', 'Iniciado', 'Finalizado'];
+    const headers = ['Nombre', 'Correo', 'Teléfono', 'Resultado', 'Respuestas', 'Iniciado', 'Finalizado'];
     const lines = [headers.join(',')];
     allRows.forEach(r => {
       const ans = Array.isArray(r.answers) ? r.answers.join('|') : '';
       const row = [
         csvCell(r.name),
         csvCell(r.email),
+        csvCell(r.phone),
         csvCell(r.result_name || r.result),
         csvCell(ans),
         csvCell(r.started_at),

@@ -7,6 +7,7 @@ create table if not exists public.participants (
   id           bigserial primary key,
   name         text not null,
   email        text not null,
+  phone        text,
   result       text not null check (result in ('swift', 'dzire', 'jimny')),
   result_name  text,
   answers      jsonb,
@@ -14,6 +15,9 @@ create table if not exists public.participants (
   finished_at  timestamptz default now(),
   created_at   timestamptz default now()
 );
+
+-- Migración: si ya creaste la tabla antes sin la columna phone, corre esto:
+-- alter table public.participants add column if not exists phone text;
 
 -- Index para búsquedas rápidas
 create index if not exists participants_email_idx        on public.participants (email);
